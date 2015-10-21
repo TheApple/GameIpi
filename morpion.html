@@ -1,0 +1,65 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>Ma page html</title>
+    <link rel="stylesheet" href="style/game.css"/>
+</head>
+<body>
+
+<canvas id="canvas" width="900" height="700">
+    Sorry, your browser doesn't support the &lt;canvas&gt; element.
+</canvas>
+
+<script>
+    function draw() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext){
+
+            var ctx = canvas.getContext('2d');
+
+            // ctx.fillRect(25,25,100,100);
+            //ctx.clearRect(45,45,60,60);
+            ctx.strokeRect(0,0,200,200);
+            ctx.strokeRect(0,200,200,200);
+            ctx.strokeRect(0,400,200,200);
+            ctx.strokeRect(200,0,200,200);
+            ctx.strokeRect(200,200,200,200);
+            ctx.strokeRect(200,400,200,200);
+            ctx.strokeRect(400,0,200,200);
+            ctx.strokeRect(400,200,200,200);
+            ctx.strokeRect(400,400,200,200);
+
+            ctx.beginPath();
+            ctx.arc(675,75,50,0,Math.PI*2,true); // Outer circle
+            ctx.moveTo(710,75);
+            ctx.arc(675,75,35,0,Math.PI,false);  // Mouth (clockwise)
+            ctx.moveTo(665,65);
+            ctx.arc(660,65,5,0,Math.PI*2,true);  // Left eye
+            ctx.moveTo(695,65);
+            ctx.arc(690,65,5,0,Math.PI*2,true);  // Right eye
+            ctx.stroke();
+        }
+    }
+    draw();
+</script>
+
+<table>
+    <tr>
+        <td class="case" data-position="0,0">1</td>
+        <td class="case" data-position="1,0">2</td>
+        <td class="case" data-position="2,0">3</td>
+    </tr>
+    <tr>
+        <td class="case" data-position="0,1">4</td>
+        <td class="case" data-position="1,1">5</td>
+        <td class="case" data-position="2,1">6</td>
+    </tr>
+    <tr>
+        <td class="case" data-position="0,2">7</td>
+        <td class="case" data-position="1,2">8</td>
+        <td class="case" data-position="2,2">9</td>
+    </tr>
+</table>
+</body>
+
+</html>
