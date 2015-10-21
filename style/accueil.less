@@ -1,0 +1,98 @@
+.container {
+  #TitleWebSite {
+    animation-name: AnimationTitleBloc;
+    animation-duration: 5s;
+    text-align: center;
+    h1 {
+      animation-name: AnimationTitle;
+      animation-duration: 5s;
+      font-size: 50px;
+    }
+
+  }
+  #Content {
+
+  }
+  #Navigation {
+    ul {
+      li {
+        list-style: none;
+      }
+    }
+  }
+  #Animation {
+    margin: auto;
+    width: 850px;
+    text-align: center;
+    img{
+      width: 180px;
+      height: 180px;
+      margin: 0px 10px;
+    }
+    #Rocket1 {
+      animation-name: TeamRocket1;
+    }
+    #Rocket2 {
+      animation-name: TeamRocket2;
+    }
+    #Rocket3 {
+      animation-name: TeamRocket3;
+    }
+    #Rocket4 {
+      animation-name: TeamRocket4;
+    }
+  }
+}
+
+// Animation
+@keyframes AnimationTitle {
+  0% {
+    color: red;
+  }
+  25% {
+    color: yellow;
+  }
+  50% {
+    color: blue;
+  }
+  75% {
+    color: green;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@keyframes AnimationTitleBloc {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 200px;
+  }
+  50% {
+    left: 0px;
+  }
+  75% {
+    left: -200px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes TeamRocket1 {
+
+}
+
+@keyframes TeamRocket2 {
+
+}
+
+@keyframes TeamRocket3 {
+
+}
+
+@keyframes TeamRocket4 {
+
+}
