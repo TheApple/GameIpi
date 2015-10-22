@@ -84,8 +84,7 @@ function controleGagne(caseselect){
 }
 
 function controleLigne(i, j, caseselect){
-    var gagne = false;
-    gagne = controleLigne();
+    
 }
 
 function controleFinJeu() {
