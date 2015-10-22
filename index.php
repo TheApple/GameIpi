@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container">
-    <?php include("part/menu.html") ?>
+    <?php include("part/menu.php") ?>
     <div class="row">
         <div class="col-md-12" id="TitleWebSite">
             <h1>Game Ipi</h1>
@@ -31,7 +31,11 @@
                 vulputate libero, tincidunt fringilla massa imperdiet et.
             </p>
         </div>
+        <div class="col-md-4" id="Score">
+            <?php include("part/score.php")?>
+        </div>
     </div>
+
     <div class="row" id="TeamTitle">
         <h2>Our team</h2>
     </div>
