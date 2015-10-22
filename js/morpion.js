@@ -34,6 +34,7 @@ function init(){
 }
 
 function jouer(caseselect){
+    console.log(caseselect.attr("chiffre"));
     if(caseselect.attr("chiffre") != 0){
         alert("Vous venez de jouer dans une case déja jouée");
         return false;
@@ -46,6 +47,20 @@ function jouer(caseselect){
             tours--;
     }
     finJeu++;
+
+    finJeu();
+}
+
+function controleGagne(){
+    var gagne
+}
+
+function finJeu() {
+    if(finJeu == 9)
+    {
+        alert("Personne n'a gagné ...");
+        return false;
+    }
 }
 
 $(document).ready(function(){
