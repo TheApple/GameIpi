@@ -3,12 +3,19 @@
  */
 var grille, tours, finJeu;
 
+$(document).ready(function(){
+    init();
+    $('.case').on('click',function(){
+        jouer($(this))
+    });
+});
+
 function init(){
     //Parcours de toutes les cases pour les vider et mettre leur data chiffre à 0
     //Le data chiffre contient 0 si personne n'a joué dessus, 1 si on a joué une croix et 2 si on a joué un rond
     $('.case').each(function(){
         $(this).html("");
-        $(this).setAttribute('data-chiffre','0');
+        $(this).attr('data-chiffre','0');
     });
 
 
@@ -34,28 +41,54 @@ function init(){
 }
 
 function jouer(caseselect){
-    console.log(caseselect.attr("chiffre"));
-    if(caseselect.attr("chiffre") != 0){
+    console.log(caseselect.attr("data-chiffre"));
+    if(caseselect.attr("data-chiffre") != 0){
         alert("Vous venez de jouer dans une case déja jouée");
         return false;
     }
     else{
-        setAttribute('data-chiffre', tours);
+        caseselect.attr('data-chiffre', tours);
         if(tours==1)
+        {
+            caseselect.html('X');
             tours++;
-        else
+        }
+        else {
+            caseselect.html('O');
             tours--;
+        }
     }
     finJeu++;
-
-    finJeu();
+    controleGagne(caseselect);
+    controleFinJeu();
 }
 
-function controleGagne(){
-    var gagne
+
+function controleGagne(caseselect){
+    /*
+    * On controle toutes les colonnes puis toutes les lignes
+    *
+    * Pour controler toutes  les colonnes, on se place en haut de la première ligne, et on descend
+    * puis on se replace sur la case d'a coté sur la première ligne, jusqu'a la fin
+    *
+    * Après qu'on soit arrivé à la fin de la première ligne, on retourne a la première case de la première colonne
+    * et de la première ligne, puis on regarde chaque colonne de chaque ligne
+    *
+    * A chaque controle, on regarde si tous les éléments controlés sont égaux ou non
+    *
+    * */
+
+    //i -> n° de ligne / / / j -> n° de colonne
+    var i = 0, j = 0;
+    controleLigne(i,j, caseselect)
 }
 
-function finJeu() {
+function controleLigne(i, j, caseselect){
+    var gagne = false;
+    gagne = controleLigne();
+}
+
+function controleFinJeu() {
     if(finJeu == 9)
     {
         alert("Personne n'a gagné ...");
@@ -63,8 +96,26 @@ function finJeu() {
     }
 }
 
-$(document).ready(function(){
-    $('.case').click(function(){
-        jouer($(this))
-    });
-});
+
+
+/*
+*
+*  var i = 0, j = 0, nbtrouveligne = 0, nbtrouvecol = 0;
+ while(i<2)
+ {
+ while(j<2)
+ {
+ if(caseselect.attr('data-chiffre')== tour)
+ nbtrouvecol++;
+ if(nbtrouvecol == 3)
+ {
+ alert("Vous avez gagné !!")
+ return false;
+ }
+ j++;
+ }
+ j=0;
+ nbtrouvecol = 0;
+ i++;
+ }*/
+
