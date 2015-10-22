@@ -41,13 +41,13 @@ function init(){
 }
 
 function jouer(caseselect){
-    console.log(caseselect.attr("data-chiffre"));
     if(caseselect.attr("data-chiffre") != 0){
         alert("Vous venez de jouer dans une case déja jouée");
         return false;
     }
     else{
         caseselect.attr('data-chiffre', tours);
+        console.log(caseselect.attr('data-chiffre'));
         if(tours==1)
         {
             caseselect.html('X');
@@ -80,11 +80,29 @@ function controleGagne(caseselect){
 
     //i -> n° de ligne / / / j -> n° de colonne
     var i = 0, j = 0;
-    controleLigne(i,j, caseselect)
+    controleCol(i,j, caseselect)
 }
 
-function controleLigne(i, j, caseselect){
-    
+function controleCol(i, j, caseselect){
+    var gagne = 0, casecontrolee;
+    while(j<3 && gagne<3){
+        //casecontrolee = $('body').find('[data-position="'+i.toString()+','+ j.toString()+'"]');
+        //
+        //console.log('[data-position="'+i.toString()+','+ j.toString()+'"]');
+        //console.log("casecontrolee : "+casecontrolee.attr('data-chiffre'));
+
+        var test = $('body').find('[data-position="pos"]');
+        console.log(test.attr('data-test'));
+
+        //if(casecontrolee.attr('data-chiffre') == tours){
+        //    gagne++;
+        //}
+        //if(gagne == 3){
+        //    alert("Vous avez gagné !");
+        //    return false;
+        //}
+        j++;
+    }
 }
 
 function controleFinJeu() {
