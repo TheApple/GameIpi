@@ -19,5 +19,20 @@ $(document).ready(function(){
         $("#AudioRocket1")[0].pause();
     });
 
+    $("#Rocket2").mouseleave(function(){
+        $("#AudioRocket2").currentTime = 0;
+        $("#AudioRocket2")[0].pause();
+    });
+
+    $("#Rocket3").mouseleave(function(){
+        $("#AudioRocket3").currentTime = 0;
+        $("#AudioRocket3")[0].pause();
+    });
+
+    $("#Rocket4").mouseleave(function(){
+        $("#AudioRocket4").currentTime = 0;
+        $("#AudioRocket4")[0].pause();
+    });
+
 });
 
