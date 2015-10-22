@@ -13,7 +13,6 @@
 }
 .container #Animation {
   margin: auto;
-  width: 850px;
   text-align: center;
 }
 .container #Animation img {
@@ -21,18 +20,7 @@
   height: 180px;
   margin: 0px 10px;
 }
-.container #Animation #Rocket1 {
-  animation-name: TeamRocket1;
-}
-.container #Animation #Rocket2 {
-  animation-name: TeamRocket2;
-}
-.container #Animation #Rocket3 {
-  animation-name: TeamRocket3;
-}
-.container #Animation #Rocket4 {
-  animation-name: TeamRocket4;
-}
+
 @keyframes AnimationTitle {
   0% {
     color: red;
@@ -66,12 +54,4 @@
   100% {
     left: 0px;
   }
-}
-@keyframes TeamRocket1 {
-}
-@keyframes TeamRocket2 {
-}
-@keyframes TeamRocket3 {
-}
-@keyframes TeamRocket4 {
 }
