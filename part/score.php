@@ -11,9 +11,9 @@
     <?php
     $bdd = new PDO('mysql:host=localhost;dbname=gameipi;charset=utf8','root','');
 
-    $reponse = $bdd->query("SELECT * FROM morpion");
+    $response = $bdd->query("SELECT * FROM morpion ORDER BY MO_Win DESC");
 
-    while ($data = $reponse->fetch()) {
+    while ($data = $response->fetch()) {
         $win = $data["MO_Win"];
         $lose = $data["MO_Lose"];
         if ($win == 0 and $lose == 0) {
